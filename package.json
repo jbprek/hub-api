@@ -1,0 +1,22 @@
+{
+  "name": "hub-api",
+  "version": "1.0.0",
+  "description": "Mibeez Hub API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mibeez",
+    "hub",
+    "api",
+    "rest"
+  ],
+  "author": "I. Prekezes",
+  "license": "ISC",
+  "dependencies": {
+    "good": "^6.3.0",
+    "good-console": "^5.0.2",
+    "hapi": "^9.0.1"
+  }
+}
