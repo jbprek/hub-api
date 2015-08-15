@@ -1,51 +1,50 @@
 var Hapi = require('hapi');
 var Good = require('good');
+var Model = require('./lib/hub-api-mode/index')
 
 var server = new Hapi.Server();
 server.connection({port: 3000});
 
+/* Get Hub Info */
 server.route({
     method: 'GET',
     path: '/',
     handler: function (request, reply) {
-        server.log('info', 'GET /hub: ' + request + '*' + reply);
-        reply("GET /")
-    }
-});
-/* Get Hub Info */
-server.route({
-    method: 'GET',
-    path: '/hub',
-    handler: function (request, reply) {
-        server.log('info', 'GET /hub: ' + request + '*' + reply);
-        reply("GET /hub")
+        server.log('info', 'GET /: ');
+        var body = Model.ping()// Model.ping()
+
+
+        //reply.setHeader('Content-Length', Buffer.byteLength(body));
+        reply.setHeader('Content-Type', 'text/plain; charset="utf-8"');
+        reply.end(body);
+
     }
 });
 
 /* Commission hub */
 server.route({
     method: 'POST',
-    path: '/hub',
+    path: '/',
     handler: function (request, reply) {
-        reply("POST /hub")
+        reply("POST /")
     }
 });
 
 /* Temporary decommission hub */
 server.route({
     method: 'PUT',
-    path: '/hub',
+    path: '/',
     handler: function (request, reply) {
-        reply("PUT /hub")
+        reply("PUT /")
     }
 });
 
 /* Temporary decommission hub */
 server.route({
     method: 'DELETE',
-    path: '/hub',
+    path: '/',
     handler: function (request, reply) {
-        reply("DELETE /hub")
+        reply("DELETE /")
     }
 });
 
