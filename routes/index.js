@@ -4,7 +4,8 @@ var HubInfo = require('../lib/hub_info')
 
 router.get('/', function (req, res, next) {
     console.log('GET /');
-    res.send(HubInfo.toJSON() );
+    var h = new HubInfo();
+    res.send(h.toJSON() );
 });
 
 

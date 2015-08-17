@@ -68,7 +68,7 @@ http.createServer(app).listen(app.get('port'), function(){
     var hh = new HubInfo();
     //HubInfo.store();
     //HubInfo.fetch();
-    console.log('JSON:'+hh.toJSON());
+    console.log('wan_adress:'+hh.toJSON());
 
     console.log('Express server listening on port ' + app.get('port'));
 });
