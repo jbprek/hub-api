@@ -8,7 +8,6 @@ var bodyParser = require('body-parser');
 
 var HubInfo = require('./lib/hub_info')
 
-
 var routes = require('./routes/index');
 var sensors = require('./routes/sensors');
 
@@ -66,10 +65,10 @@ module.exports = app;
 
 
 http.createServer(app).listen(app.get('port'), function(){
-    var hubInfo = new HubInfo();
-    HubInfo.store();
-    HubInfo.fetch();
-    console.log('JSON:'+HubInfo.toJSON());
+    var hh = new HubInfo();
+    //HubInfo.store();
+    //HubInfo.fetch();
+    console.log('JSON:'+hh.toJSON());
 
     console.log('Express server listening on port ' + app.get('port'));
 });
